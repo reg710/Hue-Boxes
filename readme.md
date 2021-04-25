@@ -1,4 +1,4 @@
-#Hue Boxes
+# Hue Boxes
 
 Academy Pittsburgh assignment - recreating page made by Jennifer Dewalt - https://jenniferdewalt.com/technicolor_boxes.html
 
