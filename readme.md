@@ -1,6 +1,8 @@
-Assignment was to recreate site created by Jennifer Dewalt - https://jenniferdewalt.com/technicolor_boxes.html
+#Hue Boxes
 
-By hovering the mouse over the central gray squares, colored boxes appear at random.
+Academy Pittsburgh assignment - recreating page made by Jennifer Dewalt - https://jenniferdewalt.com/technicolor_boxes.html
+
+By hovering the mouse over the central gray block, colored boxes appear at random.
 My version allows user to select between random color generator or blue tone colors. 
 
 ![Image of Hue Boxes](https://github.com/reg710/Hue-Boxes/blob/main/HueBoxes-SampleImage.png)
