@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happylilboxes</title>
+    
+    <!-- Added this link in order to be able to use bootstrap style buttons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    
+    <style>
+        
+        body {
+            /* chose this for debugging testing but you know what, I'm sticking with this Florida vibe */
+            background-color: lightseagreen;
+        }
+        
+        .home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 80vh;
+            align-items: center;
+            background-color: lightseagreen;
+        }
+    
+        .buttonbar {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 500px;
+            justify-content: space-evenly;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+            background-color: lightcoral;
+            box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.4), 0 6px 20px 0 rgba(19, 19, 19, 0.4);
+            width: 500px;
+            height: 450px;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: lightcoral;
+        }
+
+        .box:hover {
+            box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.945);
+            z-index: 1;
+        }
+
+
+    </style>
+
+    <script>
+        
+        // Does each color generator needs it's own function? Is there a way to simplify?
+        function randomColor(myID) {
+            // debugging log
+            console.log('boop!!!');
+            // create a random color for the background
+            // generate 3 random numbers between 0 and 255
+            // put them into an rgb string
+            const r = Math.floor(Math.random()* 255);
+            const g = Math.floor(Math.random()* 255);
+            const b = Math.floor(Math.random()* 255);
+            const backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            document.getElementById(myID).style.backgroundColor = backgroundColor;
+        }
+
+        function blueTones(myID) {
+            console.log('bluebloop!')
+            // Created an array of blue-ish color hex values
+           let colorChoices = [
+                    "#00FFFF",
+                    "#00FFFF",
+                    "#E0FFFF",
+                    "#00CED1",
+                    "#40E0D0",
+                    "#48D1CC",
+                    "#AFEEEE",
+                    "#B0E0E6",
+                    "#5F9EA0",
+                    "#4682B4",
+                    "#6495ED",
+                    "#00BFFF",
+                    "#1E90FF",
+                    "#ADD8E6",
+                    "#87CEEB",
+                    "#87CEFA",
+                    "#191970",
+                    "#000080",
+                    "#00008B",
+                    "#0000CD",
+                    "#0000FF",
+                    "#4169E1",
+                    "#778899",
+                    "#B0C4DE",
+                    "#F0F8FF",
+                    "#1434A4",
+                    "#7DF9FF",
+                    "#6F8FAF",
+                    "#1F51FF",
+                    "#A7C7E7",
+                    "#0F52BA",
+                    "#0437F2",
+                    "#0818A8"
+           ]          
+            // Pick a random number between 0 and 32, which is the size of colorChoices array
+            // Use that number as an index in the array to select a color
+            // Set that selected color to the background of the div
+            const choiceNumber = Math.floor(Math.random()*32);
+            const blueBackground = `${colorChoices[choiceNumber]}`
+            document.getElementById(myID).style.backgroundColor = blueBackground
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="home">
+       <div class="buttonbar">
+           <!-- Formatting for these buttons is copied from Bootstrap
+            Onclick calls function that fills conatiner with with divs that either 
+            have the mouseover set to call Blue Colors or Random Colors functions
+            When you click another button, it resets the page-->
+           <a class="btn btn-light" href="#" role="button" onclick="clickForBlue()">Blues</a>
+           <a class="btn btn-light" href="#" role="button" onclick="clickForRandom()">Surprise Me</a>
+       </div>
+        <div class="container" id="container">
+        </div>
+    </div>
+</body>
+
+
+     <script>
+        //  Curious if there is a better way to set these functions up. They feel a bit repetitive currently.
+         function clickForBlue(){
+            const area = document.getElementById("container");
+            let output = "";
+            for(let i = 0; i < 90; i++) {
+                output += `<div class ="box" id='box${i}' onmouseenter='blueTones(id)'></div>`
+            }
+            area.innerHTML = output;
+        }
+
+        function clickForRandom(){
+         const area = document.getElementById("container");
+         let output = "";
+         for(let i = 0; i < 90; i++) {
+             output += `<div class ="box" id='box${i}' onmouseenter='randomColor(id)'></div>`
+         }
+         area.innerHTML = output;
+        }
+     </script>
+
+<!-- Added these links below per bootstrap instructions on setup -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html> 
