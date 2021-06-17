@@ -11,6 +11,7 @@ STILL TO DO:
 - Add additional color option buttons - try different approach than blue array method
 - Attempt rainbow option, where the container box has ROYGBIV columns that change only within their color
 - Simplify functions where possible 
+- Currently only works on a browswer, on mobile you have to tap to see the boxes appear and the sizing would also need to be adjusted
 
 PROJECT NOTES:
 - Try to limit the color to only blue tones
