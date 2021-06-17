@@ -5,7 +5,6 @@ Academy Pittsburgh assignment - recreating page made by Jennifer Dewalt - https:
 By hovering the mouse over the central coral block, colored boxes appear at random.
 My version allows user to select between random color generator or blue tone colors. 
 
-![Image of Hue Boxes](https://github.com/reg710/Hue-Boxes/blob/main/HueBoxes-SampleImage.png)
 
 STILL TO DO:
 - Create header with short explanation
